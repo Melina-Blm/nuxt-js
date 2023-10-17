@@ -1,15 +1,19 @@
 <script setup>
 const props = defineProps({
-  information: Array
+  services: Array,
+  tag: String,
+  title: String,
 })
 </script>
 
 <template>
+          <span class="c-text">{{ tag }}</span>
+        <h2 class="c-title">{{ title }}</h2>
   <section class="c-information">
-    <div v-for="item in information" class="c-information__item -secondBorder">
+    <div v-for="item in services" class="c-information__item -secondBorder">
       <!-- Matching prismic options / file names -->
       <div class="c-information__icon">
-        <img :src="`/icons/${item.information_icon}.svg`" alt="">
+        <img :src="`/icons/${item.services_icon}.svg`" alt="">
       </div>
       <!-- OR v-if case by case  <div v-if="item.information_icon === 'phone'" class="c-information__icon">-->
       <!--        <img :src="`/icons/phone.svg`" alt="">-->
@@ -21,18 +25,18 @@ const props = defineProps({
       <!--        <img :src="`/icons/pin.svg`" alt="">-->
       <!--      </div>-->
       <div class="c-information__title">
-        <PrismicRichText :field="item.information_title" />
+        <PrismicRichText :field="item.services_title" />
       </div>
       <div class="c-information__text">
-        <PrismicRichText :field="item.information_text" />
+        <PrismicRichText :field="item.services_text" />
       </div>
     </div>
   </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-information {
-  margin: rem(135) 0 rem(150) 0;
+  margin: rem(0) 0 rem(150) 0;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -85,7 +89,7 @@ const props = defineProps({
     padding: 10px;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color:$secondary-color;
     border-radius: 50%;
   }
 

@@ -18,10 +18,12 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
 
 <template>
   <section class="c-hero">
+
     <div class="c-hero__title">
       <!-- Convert prismic rich text field to full html text -->
       <PrismicRichText :field="title" />
     </div>
+    
     <div class="c-hero__text">
       <!-- Convert prismic rich text field to full html text -->
       <PrismicRichText :field="text" />
