@@ -1,26 +1,33 @@
 <script setup>
 import MyIcon from './elements/MyIcon.vue';
+import { useGlobalStore } from '@/stores/global';
 
+const store = useGlobalStore();
+console.log(store)
 
 </script>
 
 <template>
+
+<!-- 
+  {{ store.count }} // 
+  {{ store.foo }} -->
 <div class="header">
   <img src="/logo-food.png" alt="">
   <nav class="header__nav">
     <ul>
-      <router-link to="/">Home</router-link>
-      <router-link to="/">Recettes</router-link>
-      <li><a href="#">Service</a></li>
-      <li><a href="#">Shops</a></li>
+      <router-link class="router-link" to="/">Home</router-link>
+      <router-link class="router-link" to="/">Recettes</router-link>
+      <router-link class="router-link" to ="/">Service</router-link>
+      <router-link to="/" class="router-link">Shops</router-link>
     </ul>
   </nav>
   <div class="searchbar">
 <MyIcon name="search" variant="nobg" stroke="black" size="regular"/>
 <input type="text" placeholder="Search">
-<div class="shoppingcart"> 
+<div class="shoppingcart" @click="store.increment"> 
   <MyIcon name="cart" variant="nobg" stroke="black" size="regular"></MyIcon>
-  <p class="shoppingcart_quantity">2</p>
+  <p class="shoppingcart_quantity">{{ store.count }}</p>
 </div>
 
   </div>
@@ -30,6 +37,7 @@ import MyIcon from './elements/MyIcon.vue';
 </template>
 
 <style lang="scss" scoped>
+
 .shoppingcart{
   position: relative;
 
@@ -88,6 +96,17 @@ nav {
     padding-right: rem(130);
     border-right: 1px solid $gray;
   }
+}
+
+.router-link {
+  color: #000; /* Couleur de texte par défaut */
+  text-decoration: none; /* Supprime les soulignements par défaut */
+  transition: color 0.3s; /* Animation de transition pour la couleur du texte */
+}
+
+/* Styles au survol */
+.router-link:hover {
+  color: orange; /* Couleur du texte lorsque survolé */
 }
 
 </style>

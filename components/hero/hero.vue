@@ -44,7 +44,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
     
     <div class="recipes-list">
       <div v-for="(recipes,index) in recipes" :key="recipe_id">
-        <RecipeCard :title="recipes.recipe_name" :description="recipes.recipe_description " :image="recipes.image_url"/>
+        <RecipeCard :title="recipes.recipe_name" :description="recipes.recipe_description " :id="recipes.recipe_id" :image="recipes.image_url"/>
       </div>
     </div>
   </section>
@@ -96,7 +96,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
-    gap: rem(40);
+    gap: rem(30);
   }
 
 }

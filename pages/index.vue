@@ -24,7 +24,8 @@ console.log(home)
 
     <div class="content">
         <MyHeader/>
-    
+        <Testimonial :testimonial="home.data.testimonial"/>
+
     <BikeDelivery/>
     <div class="p-index">
         <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_buttons"/>
@@ -33,6 +34,7 @@ console.log(home)
         <!-- <RecipeCard v-bind="{ title: 'Titre de la recette', description: 'une description' }"/>
         Page d'accueil -->
         <HowTo v-bind="{ tag: 'How to work', title: 'Food us An Important Part Of A Balanced Diet', items:home.data.how_to}"/>
+       
     </div>
 </div>
 </template>

@@ -1,12 +1,12 @@
 <script setup>
 const props = defineProps({
-  information: Array,
+  information: Array
 })
 </script>
 
 <template>
   <section class="c-information">
-    <div v-for="item in information" class="c-information__item">
+    <div v-for="item in information" class="c-information__item -secondBorder">
       <!-- Matching prismic options / file names -->
       <div class="c-information__icon">
         <img :src="`/icons/${item.information_icon}.svg`" alt="">
@@ -30,25 +30,52 @@ const props = defineProps({
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-information {
+  margin: rem(135) 0 rem(150) 0;
+  text-align: center;
   display: flex;
-  flex-flow: row wrap;
-  margin: rem(100) rem(0) ;
-  border-radius: rem(30);
-  padding: rem(70) rem(70);
-  box-shadow: 0 0 8px 0 rgba(1, 1, 1, 0.108);
-  
-  
+  justify-content: center;
+  align-items: center;
+  border-radius: rem(50);
+  background: $white;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.05);
+  padding: rem(25);
 
-
+ 
+  
   &__item {
-    flex: 1;
     display: flex;
-    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
- 
+    flex-direction: column;
+    flex: 1;
+    gap: rem(7);
+    height: rem(163);
+
+    &:nth-child(2n){
+    
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      background-color: $gray;
+      width: 1px;
+      display: block;
+      height: 100%;
+      position: absolute;
+    }
+
+    &::after {
+      left: 0;
+    }
+
+    &::before {
+      right: 0;
+    }
+  
+}
   }
 
   &__icon {
@@ -64,6 +91,7 @@ const props = defineProps({
 
   &__title {
     font-weight: 700;
+
     &:not(:first-child) {
       margin-top: 10px;
     }
@@ -75,4 +103,8 @@ const props = defineProps({
     }
   }
 }
-</style>
+
+
+
+
+  </style>
