@@ -9,7 +9,7 @@ import MyTitle from '../components/elements/MyTitle.vue';
 
 <div class="footer">
     <div class="footer__grid">
-        <img src="../assets/logo.png" alt="">
+       
         <MyTitle size="regular" el="p" color="grey" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo libero viverra dapibus odio sit malesuada in quis. Arcu tristique elementum viverra integer id.</MyTitle>
         <div class="footer__grid-icons">
         <MyIcon name="facebook" variant="light orange" stroke="orange" size="regular"/>
@@ -54,9 +54,9 @@ import MyTitle from '../components/elements/MyTitle.vue';
 
 .footer {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: row;
-  align-items: start;
+  align-items: flex-start;
 
   @media screen and (max-width: $large){
   flex-direction: column;

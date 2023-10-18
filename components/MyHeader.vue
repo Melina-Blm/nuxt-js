@@ -61,11 +61,13 @@ console.log(store)
     justify-content: space-between;
     margin: 0 rem(20);
     padding: rem(20) 0;
+    
 
 nav {
     ul {
         display: flex;
         gap: rem(50);
+        
     a {
         text-decoration: none;
         color: $black;

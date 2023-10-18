@@ -3,7 +3,8 @@ const props = defineProps({
 id: Number,
 title: String,
 description: String,
-image: String
+image: String,
+
 })
 
 import MyTitle from './elements/MyTitle.vue';
@@ -37,7 +38,7 @@ const isAlreadyInCart = (id) =>{
     <div class="c-recipe-card__button">
       <MyButton v-if="!isAlreadyInCart(id)" class="c-reciped-card__button-add" variant='rounded' size='small' @click="store.addToCart(id)">Add to cart</MyButton>
       <MyButton v-else class="c-reciped-card__button-add" variant='rounded' size='small' @click="store.removeFromCart(id)">Remove</MyButton>
-      <MyButton v class="btn-more" variant="rounded" size="small" :has-icon="false" ><RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink></MyButton>
+      <MyButton class="btn-more" variant="rounded" size="small" :has-icon="false" ><RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink></MyButton>
       
     </div>
     
@@ -123,5 +124,22 @@ const isAlreadyInCart = (id) =>{
     cursor: pointer;
   }
 }
+
+.c-text {
+  display: flex;
+  justify-content: center;
+  color: orange;
+  margin-top: rem(130);
+  font-size:$regular-font-size;
+
+}
+
+.c-title {
+  display: flex;
+  justify-content: center;
+  font-size:$big-font-size;
+  
+}
+
 
 </style>

@@ -44,11 +44,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
     </div>
     
     
-    <div class="recipes-list">
-      <div v-for="(recipes,index) in recipes" :key="recipe_id">
-        <RecipeCard :title="recipes.recipe_name" :description="recipes.recipe_description " :id="recipes.recipe_id" :image="recipes.image_url"/>
-      </div>
-    </div>
+
   </section>
  
 </template>
