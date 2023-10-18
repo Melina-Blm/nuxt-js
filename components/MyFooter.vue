@@ -9,7 +9,7 @@ import MyTitle from '../components/elements/MyTitle.vue';
 
 <div class="footer">
     <div class="footer__grid">
-       
+       <img src="/logo.png" alt="">
         <MyTitle size="regular" el="p" color="grey" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo libero viverra dapibus odio sit malesuada in quis. Arcu tristique elementum viverra integer id.</MyTitle>
         <div class="footer__grid-icons">
         <MyIcon name="facebook" variant="light orange" stroke="orange" size="regular"/>
@@ -83,7 +83,7 @@ import MyTitle from '../components/elements/MyTitle.vue';
   }
 
   &__grid img {
-    width: rem(150);
+    width: rem(120);
     margin-bottom: rem(30);
   }
   &__grid-icons {

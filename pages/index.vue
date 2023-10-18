@@ -36,7 +36,7 @@ console.log(home)
 {{ home.data.how_to }}
 </pre> --> 
 <!-- <pre>
-{{ home.data.services }}
+{{ home.data.newsletter }}
 </pre> -->
     <div class="content">
         <MyHeader/>
@@ -46,6 +46,7 @@ console.log(home)
 
     
         <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_buttons"/>
+        
         <Information :information="home.data.information" />
         <div class="recipes-list">
       <div v-for="(recipes,index) in recipes" :key="recipe_id">
@@ -58,6 +59,7 @@ console.log(home)
         Page d'accueil -->
         <HowTo v-bind="{ tag: 'How to work', title: 'Food us An Important Part Of A Balanced Diet', items:home.data.how_to}"/>
         <Testimonial v-bind="{tag: 'Testimonials', title: 'Our Happy Client Says', testimonial:home.data.testimonial, text:home.data.testimonial}"/>
+        <Newsletter :newsletter="home.data.newsletter"/>
      
     </div>
     

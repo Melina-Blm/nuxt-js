@@ -32,7 +32,7 @@ const props = defineProps({
 
 <style lang="scss">
 .c-information {
-  margin: rem(135) 0 rem(150) 0;
+  margin: rem(105) 0 rem(150) 0;
   text-align: center;
   display: flex;
   justify-content: center;

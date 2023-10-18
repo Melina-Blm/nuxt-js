@@ -9,10 +9,10 @@ const props = defineProps({
 <template>
           <span class="c-text">{{ tag }}</span>
         <h2 class="c-title">{{ title }}</h2>
-  <section class="c-information">
-    <div v-for="item in services" class="c-information__item -secondBorder">
+  <section class="c-services">
+    <div v-for="item in services" class="c-services__item -secondBorder">
       <!-- Matching prismic options / file names -->
-      <div class="c-information__icon">
+      <div class="c-services__icon">
         <img :src="`/icons/${item.services_icon}.svg`" alt="">
       </div>
       <!-- OR v-if case by case  <div v-if="item.information_icon === 'phone'" class="c-information__icon">-->
@@ -24,10 +24,10 @@ const props = defineProps({
       <!--      <div v-else-if="item.information_icon === 'pin'" class="c-information__icon">-->
       <!--        <img :src="`/icons/pin.svg`" alt="">-->
       <!--      </div>-->
-      <div class="c-information__title">
+      <div class="c-services__title">
         <PrismicRichText :field="item.services_title" />
       </div>
-      <div class="c-information__text">
+      <div class="c-services__text">
         <PrismicRichText :field="item.services_text" />
       </div>
     </div>
@@ -35,7 +35,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-.c-information {
+.c-services {
   margin: rem(0) 0 rem(150) 0;
   text-align: center;
   display: flex;
@@ -95,6 +95,7 @@ const props = defineProps({
 
   &__title {
     font-weight: 700;
+    
 
     &:not(:first-child) {
       margin-top: 10px;
@@ -109,6 +110,18 @@ const props = defineProps({
 }
 
 
+.c-text {
+  display: flex;
+    justify-content: center;
+    color:orange;
+    margin-top: rem(130);
+  font-size:$regular-font-size;
+}
 
+.c-title {
+  display: flex;
+    justify-content: center;
+    font-size:$big-font-size;
+}
 
   </style>
