@@ -1,18 +1,27 @@
 <script setup>
+const props = defineProps({
+id: Number,
+title: String,
+description: String,
+image: String
+})
+
 import MyTitle from './elements/MyTitle.vue';
 import MyButton from './elements/MyButton.vue';
 
 import { useGlobalStore } from '@/stores/global';
 
 const store = useGlobalStore();
-console.log(store)
 
-defineProps({
-id: Number,
-title: String,
-description: String,
-image: String
-})
+
+
+const buttonLabel = computed(() => store.isInCart(props.id) ? 'Remove from cart' : 'Add to cart')
+
+const isAlreadyInCart = (id) =>{
+  return store.cart.includes(id)
+}
+
+
 </script>
 
 <template>
@@ -26,11 +35,11 @@ image: String
  
       <MyTitle el="p" size="regular"  class="c-recipe-card__description">{{ description }}</MyTitle>
     <div class="c-recipe-card__button">
-      <MyButton class="c-reciped-card__button-add" variant='rounded' size='small' @click="store.increment()">Add to Cart</MyButton>
-      <MyButton  class="btn-more" variant="rounded" size="small" :has-icon="false" ><RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink></MyButton>
+      <MyButton v-if="!isAlreadyInCart(id)" class="c-reciped-card__button-add" variant='rounded' size='small' @click="store.addToCart(id)">Add to cart</MyButton>
+      <MyButton v-else class="c-reciped-card__button-add" variant='rounded' size='small' @click="store.removeFromCart(id)">Remove</MyButton>
+      <MyButton v class="btn-more" variant="rounded" size="small" :has-icon="false" ><RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink></MyButton>
       
     </div>
-    <MyButton class="c-reciped-card__button-add" variant='rounded' size='small' @click="store.increment()">Remove</MyButton>
     
     </div>
   </div>

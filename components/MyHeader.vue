@@ -27,7 +27,7 @@ console.log(store)
 <input type="text" placeholder="Search">
 <div class="shoppingcart" @click="store.increment"> 
   <MyIcon name="cart" variant="nobg" stroke="black" size="regular"></MyIcon>
-  <p class="shoppingcart_quantity">{{ store.count }}</p>
+  <p class="shoppingcart_quantity">{{ store.cart }}</p>
 </div>
 
   </div>
@@ -47,10 +47,11 @@ console.log(store)
     background-color: $primary-color;
     padding: rem(5) rem(9);
     box-shadow: 0 0 10px 0 $primary-color;
-    border-radius: 100%;
+    border-radius: 30px;
+    width:70px;
     position: absolute;
     bottom: rem(25);
-    left: rem(25);
+    left: rem(28);
   }
 }
 
