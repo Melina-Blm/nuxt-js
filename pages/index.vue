@@ -35,9 +35,9 @@ console.log(home)
 <pre>
 {{ home.data.how_to }}
 </pre> --> 
-<!-- <pre>
+<pre>
 {{ home.data.newsletter }}
-</pre> -->
+</pre>
     <div class="content">
         <MyHeader/>
        
@@ -49,17 +49,20 @@ console.log(home)
         
         <Information :information="home.data.information" />
         <div class="recipes-list">
-      <div v-for="(recipes,index) in recipes" :key="recipe_id">
-        <RecipeCard :title="recipes.recipe_name" :description="recipes.recipe_description " :id="recipes.recipe_id" :image="recipes.image_url"/>
+      <div v-for="(recipe ,index) in recipes" :key="recipe_id">
+        <RecipeCard  :title="recipe.recipe_name" :description="recipe.recipe_description " :id="recipe.recipe_id" :image="recipe.image_url"/>
       </div>
     </div>
         <Services v-bind="{ tag: 'Services', title: 'Why Choose Our Favorite Food', services:home.data.services}" />
         <!-- <PrismicRichText v-bind="{field: home.data.hero_title}"/> -->
         <!-- <RecipeCard v-bind="{ title: 'Titre de la recette', description: 'une description' }"/>
         Page d'accueil -->
+        
         <HowTo v-bind="{ tag: 'How to work', title: 'Food us An Important Part Of A Balanced Diet', items:home.data.how_to}"/>
         <Testimonial v-bind="{tag: 'Testimonials', title: 'Our Happy Client Says', testimonial:home.data.testimonial, text:home.data.testimonial}"/>
         <Newsletter :newsletter="home.data.newsletter"/>
+      
+        
      
     </div>
     
