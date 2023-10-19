@@ -27,7 +27,7 @@ console.log(store)
 <input type="text" placeholder="Search">
 <div class="shoppingcart" @click="store.increment"> 
   <MyIcon name="cart" variant="nobg" stroke="black" size="regular"></MyIcon>
-  <p class="shoppingcart_quantity">{{ store.cart }}</p>
+  <p class="shoppingcart_quantity">Cart : {{ store.cart }}</p>
 </div>
 
   </div>

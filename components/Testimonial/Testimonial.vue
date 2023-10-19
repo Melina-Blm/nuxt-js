@@ -144,7 +144,7 @@ const props = defineProps({
   justify-content: center;
   color: orange;
   margin-top: rem(130);
-  font-size:$regular-font-size;
+  font-size: $medium-font-size;
 
 }
 
@@ -152,6 +152,7 @@ const props = defineProps({
   display: flex;
   justify-content: center;
   font-size:$big-font-size;
+  margin-top:rem(10);
   
 }
 

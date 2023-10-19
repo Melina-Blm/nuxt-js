@@ -38,9 +38,7 @@ console.log(home)
 <!-- <pre>
 {{ home.data.services }}
 </pre> -->
-<pre>
-{{ home.data.menucard }}
-</pre>
+
     <div class="content">
         <MyHeader/>
        
