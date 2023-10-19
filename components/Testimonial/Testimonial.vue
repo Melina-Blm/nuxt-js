@@ -71,7 +71,8 @@ const props = defineProps({
 
 &__right{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+
  img {
  
   width:80%;

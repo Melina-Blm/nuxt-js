@@ -38,22 +38,29 @@ console.log(home)
 <!-- <pre>
 {{ home.data.services }}
 </pre> -->
+<pre>
+{{ home.data.menucard }}
+</pre>
     <div class="content">
         <MyHeader/>
        
-    <BikeDelivery/>
+
     <div class="p-index">
 
     
+  
         <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_buttons"/>
-        
+        <MenuCard :menucard="home.data.menucard"/>
         <Information :information="home.data.information" />
-        <div class="recipes-list">
+    <div class="recipes-list">
       <div v-for="(recipe ,index) in recipes" :key="recipe_id">
         <RecipeCard  :title="recipe.recipe_name" :description="recipe.recipe_description " :id="recipe.recipe_id" :image="recipe.image_url"/>
       </div>
     </div>
-        <Services v-bind="{ tag: 'Services', title: 'Why Choose Our Favorite Food', items:home.data.services}" />
+    <div class="btn-more">
+    <MyButton variant="rounded" :hasIcon="true" size="small">See More Products</MyButton>
+  </div>
+  <Services v-bind="{ tag: 'Services', title: 'Why Choose Our Favorite Food', services:home.data.services}" />
      
         <!-- <PrismicRichText v-bind="{field: home.data.hero_title}"/> -->
         <!-- <RecipeCard v-bind="{ title: 'Titre de la recette', description: 'une description' }"/>
@@ -83,5 +90,9 @@ console.log(home)
     gap: rem(30);
   }
 
+.btn-more {
+  text-align: center;
+  margin: rem(50) rem(0);
+}
 
 </style>

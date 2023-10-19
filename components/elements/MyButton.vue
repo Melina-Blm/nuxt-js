@@ -4,10 +4,12 @@ const props = defineProps({
   href: String,
   size: String,
   variant: String,
+  hasIcon: Boolean,
+  content: String,
 })
 
 const className = computed(() => ({
-  ' -withIcon': props.hasIcon,
+  ' -hasIcon': props.hasIcon,
   ' -rounded': props.variant === 'rounded',
   ' -video': props.variant === 'video',
   ' -small': props.size === 'small'
@@ -18,17 +20,20 @@ const isVideoButton = computed(() => {
 })
 </script>
 <template>
-  <a v-if="href" :href="href" class="c-button" :class="className">
+  <a v-if="href" :href="href" class="button" :class="className">
     <MyIcon name="arrow bold" color="white" stroke="orange" size="big" v-if="isVideoButton" />
     <slot></slot>
+    <MyIcon :class="className" class="button__hasIcon" v-if="hasIcon" name="arrow right" variant="white" stroke="orange" size="regular" />
   </a>
-  <button v-else class="c-button" :class="className">
+
+  <button  :content="content" v-else class="button" :class="className">
     <slot></slot>
+    <MyIcon v-if="hasIcon" :class="className" class="button__hasIcon"  name="arrow right" variant="white" stroke="orange" size="regular" />
   </button>
 </template>
 
 <style lang="scss" scoped>
-.c-button {
+.button {
   background-color: $primary-color;
   background: linear-gradient(180deg, $secondary-color 0%, $primary-color 100%);
   border: none;
@@ -46,11 +51,43 @@ const isVideoButton = computed(() => {
   text-decoration: none;
   word-wrap: break-word;
   width: fit-content;
+  
 
   @include large-up{
     padding: rem(33) rem(67);
   }
 
+  &.-hasIcon{
+       > * {
+       margin-left: rem(15);
+      }
+    }
+    &.-rounded {
+      background: $primary-color;
+      padding: rem(13) rem(20);
+      font-weight: 500;
+      border-radius: rem(67);
+    }
+    &.-small {
+      font-size: $small-font-size;
+      padding: rem(14) rem(29);
+      font-weight: 400;
+
+    
+    }
+
+
+  &.-hasIcon{
+       > * {
+       margin-left: rem(-10);
+      }
+
+      &.-small {
+    font-size: $small-font-size;
+    padding: rem(10) rem(10) rem(10) rem(20);
+    font-weight: 400;
+  }
+    }
   &.-rounded {
     background: $primary-color;
     box-shadow: none;
@@ -70,16 +107,11 @@ const isVideoButton = computed(() => {
 
   &.-small {
     font-size: $small-font-size;
-    padding: rem(14) rem(29);
+    padding: rem(10) rem(10) rem(10) rem(10);
     font-weight: 400;
   }
-  &.-withIcon {
-    padding-top: rem(5);
-    padding-bottom: rem(5);
-    padding-right: rem(5);
-    &.-small {
-      gap: rem(13);
-    }
-  }
 }
+
+
+
 </style>

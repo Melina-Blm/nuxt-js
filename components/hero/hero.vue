@@ -11,92 +11,70 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
   return $fetch(env.public.apiUrl + '/recipes')
 })
 
-// onMounted(async () => {
-//   await getRecipes()
-// })
 </script>
 
 <template>
-  <section class="c-hero">
-
-    <div class="c-hero__title">
-      <!-- Convert prismic rich text field to full html text -->
-      <PrismicRichText :field="title" />
-    </div>
-    
-    <div class="c-hero__text">
-      <!-- Convert prismic rich text field to full html text -->
-      <PrismicRichText :field="text" />
-    </div>
-    <div class="c-hero__buttons">
-      <div v-for="button in buttons">
-        <!-- v-if within the loop -->
-        <!--        <button v-if="button.button_type === 'default'" class="c-hero__button -default">-->
-        <!--          <a :href="button.button_link.url">{{ button.button_label }}</a>-->
-        <!--        </button>-->
-        <!--        <button v-else class="c-hero__button -video">-->
-        <!--          <a :href="button.button_link.url">{{ button.button_label }}</a>-->
-        <!--        </button>-->
-        <!-- Or variant props inside <Button /> component to handle all possible cases-->
-        <MyButton :href="button.button_link.url" :variant="button.button_type">{{ button.button_label }}</MyButton>
+  <BikeDelivery/>
+    <div class="hero">
+      <div class="hero__leftcontent">
+      <PrismicRichText class="hero__leftcontent-title" :field="title" />
+      <PrismicRichText class="hero__leftcontent-text" :field="text" />
+      <div class="hero__leftcontent-btn">
+        <div v-for="button in buttons">
+          <MyButton :href="button.button_link.url" :variant="button.button_type">{{ button.button_label }}</MyButton>
+        </div>
       </div>
-    
-    </div>
-    
-    
+      </div>
+      <div class="hero__leftcontent">
 
-  </section>
+      </div>
+
+
+      </div>
  
 </template>
 
 <style lang="scss" >
 
-.c-hero {
+.hero {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
   
-  &__title {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: black;
+  &__leftcontent {
+    display: flex;
+    flex-direction: column;
+
     
-   
 
-    strong {
-      color: orange;
+  
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
     }
-  }
-
-  &__text {
-    font-size: 18px;
-    line-height: 1.1;
-    color: black;
-    &:not(:first-child) {
+    &-text{
+      &:not(:first-child) {
       margin-top: 1rem;
     }
-  }
+    }
+    &-title {
+      font-size: $giant-font-size;
+        font-weight: 700;
+        line-height: 1.2;
+        color: black;
 
-  &__buttons {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    &:not(:first-child) {
-      margin-top: 2rem;
+        margin: rem(20) rem(0);
+        
+
+    strong {
+    color: orange;
+    }
+     
     }
   }
-
-  &__button {
-    &.-default {
-      background-color: orange;
-    }
-  }
-
-  .recipes-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    gap: rem(30);
-  }
-
 }
+
 
 </style>
