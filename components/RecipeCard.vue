@@ -69,10 +69,10 @@ const isAlreadyInCart = (id) =>{
   }
   .btn-more{
     background-color: white;
-    border : 2px solid orange;
+    border : 2px solid $primary-color;
     &:hover {
     background-color: $secondary-color;
-    border : 2px solid orange;
+    border : 2px solid $primary-color;
     
     }
   }
@@ -117,8 +117,8 @@ const isAlreadyInCart = (id) =>{
 }
 
 .c-reciped-card__button-add {
-  background-color: orange;
-  border : 2px solid orange;
+  background-color: $primary-color;
+  border : 2px solid $primary-color;
   color: white;
   &:hover {
     background-color: orange;

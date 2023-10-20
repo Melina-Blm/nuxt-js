@@ -142,7 +142,7 @@ const props = defineProps({
 .c-text {
   display: flex;
   justify-content: center;
-  color: orange;
+  color: $primary-color;
   margin-top: rem(130);
   font-size: $medium-font-size;
 

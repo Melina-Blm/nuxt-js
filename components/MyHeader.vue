@@ -18,7 +18,7 @@ console.log(store)
     <ul>
       <router-link class="router-link" to="/">Home</router-link>
       <router-link class="router-link" to="/">Recettes</router-link>
-      <router-link class="router-link" to ="/">Service</router-link>
+      <router-link class="router-link" to ="/404">Service</router-link>
       <router-link to="/" class="router-link">Shops</router-link>
     </ul>
   </nav>

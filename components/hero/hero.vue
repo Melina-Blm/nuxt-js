@@ -26,7 +26,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
       </div>
       </div>
       <div class="hero__leftcontent">
-
+       
       </div>
 
 
@@ -69,7 +69,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
         
 
     strong {
-    color: orange;
+    color: $primary-color;
     }
      
     }

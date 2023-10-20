@@ -9,21 +9,74 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="c-how-to-item">
-        <img :src="image.url" :alt="image.alt" class="c-how-to-item__image">
-        <div class="c-how-to__content">
-            <PrismicRichText class="c-how-to-item__title" :field="title"/>
-            <PrismicRichText class="c-how-to-item__text" :field="text"/>
-            <PrismicRichText class="c-how-to-item__text" :field="price"/>
+    <div class="cardmenu">
+        <div class="cardmenu__image">
+        <img :src="image.url" :alt="image.alt">
+        </div>
+        <div class="cardmenu__content">
+            <PrismicRichText class="cardmenu__content-title" :field="title"/>
+            <PrismicRichText class="cardmenu__content-price" :field="price"/>
+            <PrismicRichText class="cardmenu__content-text" :field="text"/>
+        </div>
+        <div class="cardmenu__icons">
+            <MyIcon name="arrow right" variant="white" stroke="black"></MyIcon>
+            <MyIcon name="arrow left" variant="black" stroke="white"></MyIcon>
+
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 
-.c-how-to-item {
-    background-color: purple;
-    margin:rem(50) rem(0);
+.cardmenu{
+ margin-top:110px;
+  border-radius: 1.875rem;
+  background: $white;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.16);
+  width: rem(258);
+  height: rem(275);
+  position: relative;
+  margin-bottom: rem(20);
+    &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: rem(140);
+    gap: 10px;
+    position: relative;
+    &-title{
+    font-size: $medium-font-size;
+    font-weight: bold;
+    }
+    &-text {
+    font-size: $regular-font-size;
+    font-weight: 500;
+    }
+    &-price {
+    font-size: $regular-font-size;
+    font-weight: bold;
+    strong {
+        color:#8f1913;
+    }
+    }
+
+    }
+    &__image img{
+    position: absolute;
+    width: rem(260);
+    top: rem(30);
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    }
+    &__icons {
+    position: absolute;
+    display: flex;
+    gap: 30px;
+    bottom: rem(-50);
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    }
 }
 
 </style>

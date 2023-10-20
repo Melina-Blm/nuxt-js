@@ -27,7 +27,7 @@ const props = defineProps({
     &__text {
         display: flex;
     justify-content: center;
-    color:orange;
+    color:$primary-color;
     margin-top: rem(130);
     font-size: $medium-font-size;
     }
@@ -43,7 +43,7 @@ const props = defineProps({
         align-items: center;
     }
     &__tag {
-        color:orange;
+        color:$primary-color;
         
     }
     &__else {

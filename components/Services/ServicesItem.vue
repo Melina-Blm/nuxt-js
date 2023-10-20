@@ -1,9 +1,11 @@
 <script setup>
 const props = defineProps({
-    image: Object,
     title: Array,
     text: Array,
     icon: Array,
+    service: Array,
+   
+    
 })
 </script>
 
@@ -11,7 +13,9 @@ const props = defineProps({
    
   <div class="card">
       <div class="card__content">
-        <!-- <img :src="`/icons/${item.services_icon}.svg`" alt=""> -->
+        <div class="card__content-icons">
+        <img :src="`/icons/${icon}.svg`">
+      </div>
         <PrismicRichText class="card__content-title" :field="title" />
         <PrismicRichText class="card__content-text" :field="text" />
       </div>
@@ -36,6 +40,18 @@ const props = defineProps({
       &__content{
         text-align: center;
           padding: rem(110) rem(30);
+
+          &-icons {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color:$secondary-color;
+    border-radius: 50%;
+      }
+
       > * + * {
           margin-top: rem(25);
       }

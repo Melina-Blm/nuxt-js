@@ -85,7 +85,7 @@ const props = defineProps({
     padding: 10px;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color: $primary-color;
     border-radius: 50%;
   }
 
