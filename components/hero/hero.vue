@@ -1,5 +1,5 @@
 <script setup="">
-import RecipeCard from '@/components/RecipeCard.vue';
+
 const env = useRuntimeConfig()
 const props = defineProps({
   title: Array,

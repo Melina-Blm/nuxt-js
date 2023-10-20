@@ -1,5 +1,4 @@
 <script setup>
-import MyIcon from './elements/MyIcon.vue';
 import { useGlobalStore } from '@/stores/global';
 
 const store = useGlobalStore();
