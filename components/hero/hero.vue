@@ -1,10 +1,18 @@
 <script setup="">
-
+const { client } = usePrismic()
+const { data: home, error } = await useAsyncData('home', () => client.getSingle('homepage'))  
 const env = useRuntimeConfig()
+
+if (!home.value || error.value) {
+  throw createError({ statusCode: 404, statusMessage: 'La page d\'accueil est introuvable' })
+}
+
 const props = defineProps({
   title: Array,
   text: Array,
-  buttons: Array
+  buttons: Array,
+  menucard: Array,
+  items: Array,
 })
 
 const { data: recipes } = await useAsyncData('recipes', async () => {
@@ -14,9 +22,13 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
 </script>
 
 <template>
-  <BikeDelivery/>
+
     <div class="hero">
       <div class="hero__leftcontent">
+        
+        <div class="test">
+          <BikeDelivery/>
+        </div>
       <PrismicRichText class="hero__leftcontent-title" :field="title" />
       <PrismicRichText class="hero__leftcontent-text" :field="text" />
       <div class="hero__leftcontent-btn">
@@ -25,12 +37,14 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
         </div>
       </div>
       </div>
-      <div class="hero__leftcontent">
-       
+      <div class="hero__rightcontent">
+        <MenuCard :menucard="home.data.menucard"/>
       </div>
 
 
+
       </div>
+   
  
 </template>
 
@@ -39,10 +53,15 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
 .hero {
   display:grid;
   grid-template-columns: repeat(2, 1fr);
+
+  &__rightcontent {
+
+  }
   
   &__leftcontent {
     display: flex;
     flex-direction: column;
+    margin-top: rem(40);
 
     
 
@@ -65,7 +84,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
         line-height: 1.2;
         color: black;
 
-        margin: rem(20) rem(0);
+        margin: rem(30) rem(0);
         
 
     strong {

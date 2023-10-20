@@ -48,7 +48,7 @@ console.log(home)
     
   
         <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_buttons"/>
-        <MenuCard :menucard="home.data.menucard"/>
+        <!-- <MenuCard :menucard="home.data.menucard"/> -->
         <Information :information="home.data.information" />
 
      

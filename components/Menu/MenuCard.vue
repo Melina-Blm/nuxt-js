@@ -17,10 +17,12 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 
-.cards{
+.card{
   display: grid;
   grid-template-columns: repeat(2, 280px);
-  justify-items: end;
+  justify-content: flex-end;
+ 
+  
 
 }
 
