@@ -40,8 +40,7 @@ console.log(home)
 </pre> -->
 
     <div class="content">
-        <MyHeader/>
-       
+   
 
     <div class="p-index">
 
@@ -51,17 +50,11 @@ console.log(home)
         <!-- <MenuCard :menucard="home.data.menucard"/> -->
         <Information :information="home.data.information" />
 
-     
+        <PopularItems/>
 
         
-          <div class="recipes-list">
-          <div v-for="(recipe ,index) in recipes" :key="recipe_id">
-        <RecipeCard  :title="recipe.recipe_name" :description="recipe.recipe_description " :id="recipe.recipe_id" :image="recipe.image_url"/>
-      </div>
-    </div>
-    <div class="btn-more">
-    <MyButton variant="rounded" :hasIcon="true" size="small">See More Products</MyButton>
-  </div>
+   
+
   <Services v-bind="{ tag: 'Services', title: 'Why Choose Our Favorite Food', services:home.data.services}" />
      
         <!-- <PrismicRichText v-bind="{field: home.data.hero_title}"/> -->
@@ -85,16 +78,6 @@ console.log(home)
 .content {
     margin: rem(0) rem(80)
 }
-.recipes-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    gap: rem(30);
-  }
 
-.btn-more {
-  text-align: center;
-  margin: rem(50) rem(0);
-}
 
 </style>

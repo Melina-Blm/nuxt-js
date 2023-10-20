@@ -25,7 +25,7 @@ const isAlreadyInCart = (id) =>{
 </script>
 
 <template>
- 
+
   <div class="c-recipe-card">
       <img class="c-recipe-card__image" :src="image" alt="">
     <div class="c-recipe-card__content">

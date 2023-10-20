@@ -17,7 +17,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
 
 <template>
 
-<MyHeader/>
+
 <div class="p-recipe-view">
   <div class="section">
   <p class="section__title">Recette </p>

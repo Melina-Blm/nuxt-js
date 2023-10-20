@@ -53,11 +53,6 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
 .hero {
   display:grid;
   grid-template-columns: repeat(2, 1fr);
-
-  &__rightcontent {
-
-  }
-  
   &__leftcontent {
     display: flex;
     flex-direction: column;

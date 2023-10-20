@@ -11,9 +11,20 @@ onMounted (() => {
 
 <template>
   <div>
-    
+
+    <div class="content">
+        <MyHeader/>
+       
+      </div>
     <!-- <NuxtLayout/> -->
     <NuxtPage/>
     
   </div>
 </template>
+
+<style lang="scss" scoped>
+.content {
+    margin: rem(0) rem(80)
+}
+
+</style>
