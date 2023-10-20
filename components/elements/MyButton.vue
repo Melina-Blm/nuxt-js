@@ -1,5 +1,5 @@
 <script setup>
-import MyIcon from './MyIcon.vue';
+
 const props = defineProps({
   href: String,
   size: String,

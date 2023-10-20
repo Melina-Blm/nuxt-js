@@ -7,8 +7,7 @@ image: String,
 
 })
 
-import MyTitle from './elements/MyTitle.vue';
-import MyButton from './elements/MyButton.vue';
+
 
 import { useGlobalStore } from '@/stores/global';
 

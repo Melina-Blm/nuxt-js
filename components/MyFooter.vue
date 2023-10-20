@@ -1,6 +1,5 @@
 <script setup>
-import MyIcon from '../components/elements/MyIcon.vue';
-import MyTitle from '../components/elements/MyTitle.vue';
+
 
 </script>
 
