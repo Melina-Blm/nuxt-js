@@ -115,7 +115,7 @@ const isAlreadyInCart = (id) =>{
   }
 }
 
-.c-reciped-card__button-add {
+.c-recipe-card__button-add {
   background-color: $primary-color;
   border : 2px solid $primary-color;
   color: white;
@@ -124,22 +124,6 @@ const isAlreadyInCart = (id) =>{
     border : 2px solid orange;
     cursor: pointer;
   }
-}
-
-.c-text {
-  display: flex;
-  justify-content: center;
-  color: orange;
-  margin-top: rem(130);
-  font-size:$regular-font-size;
-
-}
-
-.c-title {
-  display: flex;
-  justify-content: center;
-  font-size:$big-font-size;
-  
 }
 
 

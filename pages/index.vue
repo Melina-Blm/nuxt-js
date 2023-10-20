@@ -50,7 +50,7 @@ console.log(home)
         <!-- <MenuCard :menucard="home.data.menucard"/> -->
         <Information :information="home.data.information" />
 
-        <PopularItems/>
+        <PopularItems v-bind="{tag: 'Product', title:'Most Popular Items'}"/>
 
         
    

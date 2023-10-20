@@ -85,7 +85,7 @@ const props = defineProps({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:rem(80) rem(0);
+
 
   &-description {
     text-align: center;
