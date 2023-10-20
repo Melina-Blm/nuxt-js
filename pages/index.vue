@@ -50,8 +50,10 @@ console.log(home)
         <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_buttons"/>
         <MenuCard :menucard="home.data.menucard"/>
         <Information :information="home.data.information" />
-    <div class="recipes-list">
-      <div v-for="(recipe ,index) in recipes" :key="recipe_id">
+
+        
+          <div class="recipes-list">
+          <div v-for="(recipe ,index) in recipes" :key="recipe_id">
         <RecipeCard  :title="recipe.recipe_name" :description="recipe.recipe_description " :id="recipe.recipe_id" :image="recipe.image_url"/>
       </div>
     </div>

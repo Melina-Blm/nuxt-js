@@ -15,8 +15,8 @@ const props = defineProps({
         </div>
         <div class="cardmenu__content">
             <PrismicRichText class="cardmenu__content-title" :field="title"/>
-            <PrismicRichText class="cardmenu__content-price" :field="price"/>
             <PrismicRichText class="cardmenu__content-text" :field="text"/>
+            <PrismicRichText class="cardmenu__content-price" :field="price"/>
         </div>
         <div class="cardmenu__icons">
             <MyIcon name="arrow right" variant="white" stroke="black"></MyIcon>
