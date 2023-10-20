@@ -15,8 +15,19 @@ const props = defineProps({
             <PrismicRichText class="c-how-to-item__text" :field="text"/>
         </div>
     </div>
+   
 </template>
 
-<style lang="scss" scoped>
 
+<style lang="scss" scoped>
+.c-how-to-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: rem(60) rem(0);
+    img {
+        width:rem(300);
+        margin-bottom: rem(20);
+    }
+}
 </style>

@@ -51,6 +51,8 @@ console.log(home)
         <MenuCard :menucard="home.data.menucard"/>
         <Information :information="home.data.information" />
 
+     
+
         
           <div class="recipes-list">
           <div v-for="(recipe ,index) in recipes" :key="recipe_id">
