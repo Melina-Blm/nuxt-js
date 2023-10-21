@@ -28,29 +28,30 @@ const isAlreadyInCart = (id) =>{
 
   <div class="c-recipe-card">
       <img class="c-recipe-card__image" :src="image" alt="">
-    <div class="c-recipe-card__content">
-    
-  
-      <MyTitle el="h3" size="regular" class="c-recipe-card__title">{{ title }}</MyTitle>
-      
- 
-      <MyTitle el="p" size="regular" class="c-recipe-card__description">{{ description }}</MyTitle>
-    <div class="c-recipe-card__button">
-      <MyButton v-if="!isAlreadyInCart(id)" class="c-recipe-card__button-add" variant='rounded' size='small' @click="store.addToCart(id)">Add to cart</MyButton>
-      <MyButton v-else class="c-recipe-card__button-add" variant='rounded' size='small' @click="store.removeFromCart(id)">Remove</MyButton>
-      <MyButton class="btn-more" variant="rounded" size="small" :has-icon="false" ><RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink></MyButton>
-      
-    </div>
-    
-    </div>
+        <div class="c-recipe-card__content">
+          <MyTitle el="h3" size="regular" class="c-recipe-card__title">{{ title }}</MyTitle>
+          <MyTitle el="p" size="regular" class="c-recipe-card__description">{{ description }}</MyTitle>
+            <div class="c-recipe-card__button">
+              <MyButton v-if="!isAlreadyInCart(id)" 
+              class="c-recipe-card__button-add" 
+              variant='rounded' 
+              size='small' 
+              @click="store.addToCart(id)">Add to cart</MyButton>
+              <MyButton v-else 
+              class="c-recipe-card__button-add" 
+              variant='rounded' 
+              size='small' 
+              @click="store.removeFromCart(id)">Remove</MyButton>
+              <MyButton class="btn-more" 
+              variant="rounded" 
+              size="small" 
+              :has-icon="false"><RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink></MyButton> 
+            </div>
+        </div>
   </div>
-
-
 </template>
 
 <style lang="scss" scoped>
-
-
 .c-recipe-card {
   background-color: $white;
   box-shadow: 0 0 31px 0 rgba(0, 0, 0, 0.05);

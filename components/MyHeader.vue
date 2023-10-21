@@ -7,32 +7,26 @@ console.log(store)
 </script>
 
 <template>
-
-<!-- 
-  {{ store.count }} // 
-  {{ store.foo }} -->
-<div class="header">
-  <img src="/logo-food.png" alt="">
-  <nav class="header__nav">
-    <ul>
-      <router-link class="router-link" to="/">Home</router-link>
-      <router-link class="router-link" to="/">Recettes</router-link>
-      <router-link class="router-link" to ="/404">Service</router-link>
-      <router-link to="/" class="router-link">Shops</router-link>
-    </ul>
-  </nav>
-  <div class="searchbar">
-<MyIcon name="search" variant="nobg" stroke="black" size="regular"/>
-<input type="text" placeholder="Search">
-<div class="shoppingcart" @click="store.increment"> 
-  <MyIcon name="cart" variant="nobg" stroke="black" size="regular"></MyIcon>
-  <p class="shoppingcart_quantity">Cart : {{ store.cart }}</p>
-</div>
-
-  </div>
-  </div>
+    <div class="header">
+      <img src="/logo-food.png" alt="">
+        <nav class="header__nav">
+          <ul>
+            <router-link class="router-link" to="/">Home</router-link>
+            <router-link class="router-link" to="/">Recettes</router-link>
+            <router-link class="router-link" to ="/404">Service</router-link>
+            <router-link to="/" class="router-link">Shops</router-link>
+          </ul>
+        </nav>
+          <div class="searchbar">
+            <MyIcon name="search" variant="nobg" stroke="black" size="regular"/>
+            <input type="text" placeholder="Search">
+              <div class="shoppingcart" @click="store.increment"> 
+                <MyIcon name="cart" variant="nobg" stroke="black" size="regular"></MyIcon>
+                <p class="shoppingcart_quantity">Cart : {{ store.cart }}</p>
+              </div>
+          </div>
+      </div>
         
-    
 </template>
 
 <style lang="scss" scoped>
@@ -101,14 +95,14 @@ nav {
 }
 
 .router-link {
-  color: #000; /* Couleur de texte par défaut */
-  text-decoration: none; /* Supprime les soulignements par défaut */
-  transition: color 0.3s; /* Animation de transition pour la couleur du texte */
+  color: #000; 
+  text-decoration: none; 
+  transition: color 0.3s; 
 }
 
-/* Styles au survol */
+
 .router-link:hover {
-  color: orange; /* Couleur du texte lorsque survolé */
+  color: orange; 
 }
 
 </style>

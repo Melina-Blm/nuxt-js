@@ -15,7 +15,6 @@ const props = defineProps({
             <PrismicRichText class="c-how-to-item__text" :field="text"/>
         </div>
     </div>
-   
 </template>
 
 

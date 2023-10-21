@@ -9,83 +9,49 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
+<div>
   <span class="c-text">{{ tag }}</span>
   <h2 class="c-title">{{ title }}</h2>
 
-  <div class="card">
-    
-    <div v-for="item in testimonial" class="card__item">
+    <div class="card">
+      <div v-for="item in testimonial" class="card__item">
+        <div class="card__item-content">
+          <MyIcon class="card__item-icon1" name="arrow left" variant="orange" stroke="white" size="regular" />
+          <MyIcon class="card__item-icon2" name="arrow right2" variant="orange" stroke="white" size="regular" />
 
-      <div class="card__item-content">
-        <MyIcon class="card__item-icon1" name="arrow left" variant="orange" stroke="white" size="regular" />
-        <MyIcon class="card__item-icon2" name="arrow right2" variant="orange" stroke="white" size="regular" />
-
-        <div class="card__item-sub">
-          <img :src="`/icons/${item.testimonial_icon}.png`" alt="">
-          <div class="card__item-sub-title">
-            <PrismicRichText class="card__item-sub-title-name" :field="item.testimonial_name" />
-            <PrismicRichText :field="item.testimonial_subtitle" />
+           <div class="card__item-sub">
+            <img :src="`/icons/${item.testimonial_icon}.png`" alt="">
+              <div class="card__item-sub-title">
+                <PrismicRichText class="card__item-sub-title-name" :field="item.testimonial_name" />
+                <PrismicRichText :field="item.testimonial_subtitle" />
+              </div>
           </div>
+            <div class="card__item-description">
+              <PrismicRichText :field="item.testimonial_description" />
+            </div>
         </div>
-        <div class="card__item-description">
-          <PrismicRichText :field="item.testimonial_description" />
-        </div>
-
-      </div>
-      <div class="card__right">
-        <img :src="item.testimonial_image.url" :alt="item.testimonial_image.alt" />
-      </div>
-  
-    </div>
-    
-  </div>
-
-
-  <!-- <div class="testimonials">
-  <MyIcon class="testimonials__icon1" name="arrow left" variant="orange" stroke="white" size="regular"/>
-    <MyIcon class="testimonials__icon2" name="arrow right2" variant="orange" stroke="white" size="regular"/>
-    <div v-for="item in testimonial" class="testimonial__item">
-      <div class="testimonials__leftcontent">
-        <img :src ="`/icons/${item.testimonial_icon}.png`" alt="">
-      <div class="testimonials__leftcontent-sub">
-        <PrismicRichText :field="item.testimonial_name" />
-        <PrismicRichText :field="item.testimonial_subtitle" />
-      </div>
-      <div>
-        <PrismicRichText class="testimonials__leftcontent-description" :field="item.testimonial_description" />
+          <div class="card__right">
+            <img :src="item.testimonial_image.url" :alt="item.testimonial_image.alt" />
+          </div>
       </div>
     </div>
-    <div class="testimonials__rightcontent">
-    <img :src="item.testimonial_image.url" :alt="item.testimonial_image.alt" />
-    </div>
-    </div>  
-</div> -->
 </div>
 </template>
 
 <style lang="scss" scoped>
 
 .card{
-  
-
 &__right{
   display: flex;
   justify-content: flex-end;
-
  img {
- 
   width:80%;
- 
+  }
 }
-}
-
- 
  &__item{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 
   &-description {
     text-align: center;
@@ -135,8 +101,7 @@ const props = defineProps({
   flex-direction: column;
   justify-content: center;
 }
- }
-  
+ } 
 }
 
 .c-text {

@@ -21,7 +21,6 @@ const props = defineProps({
         <div class="cardmenu__icons">
             <MyIcon name="arrow right" variant="white" stroke="black"></MyIcon>
             <MyIcon name="arrow left" variant="black" stroke="white"></MyIcon>
-
         </div>
     </div>
 </template>
