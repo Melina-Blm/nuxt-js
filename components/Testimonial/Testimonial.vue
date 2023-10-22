@@ -44,6 +44,7 @@ const props = defineProps({
 &__right{
   display: flex;
   justify-content: flex-end;
+  margin-top:rem(70);
  img {
   width:80%;
   }

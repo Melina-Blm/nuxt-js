@@ -29,7 +29,6 @@ console.log(home)
 
 <template>
     <div class="content">
-      <div class="p-index">
         <Hero 
         :title="home.data.hero_title" 
         :text="home.data.hero_text" 
@@ -48,7 +47,6 @@ console.log(home)
         <HowTo v-bind="{ tag: 'How to work', title: 'Food us An Important Part Of A Balanced Diet', items:home.data.how_to}"/>
         <Testimonial v-bind="{tag: 'Testimonials', title: 'Our Happy Client Says', testimonial:home.data.testimonial, text:home.data.testimonial}"/>
         <Newsletter :newsletter="home.data.newsletter"/>
-      </div>
     </div>
   <MyFooter/>
 </template>
@@ -58,6 +56,4 @@ console.log(home)
 .content {
     margin: rem(0) rem(80)
 }
-
-
 </style>

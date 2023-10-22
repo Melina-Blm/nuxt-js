@@ -25,6 +25,7 @@ const props = defineProps({
 .cards {
   display: flex;
   justify-content: space-between;
+  margin-top:rem(70);
 }
 
 .c__icon {
