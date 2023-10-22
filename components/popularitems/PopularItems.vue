@@ -14,7 +14,7 @@ const props = defineProps({
     <span class="c-popular-items__text">{{ tag }}</span>
     <h2 class="c-popular-items__title">{{ title }}</h2>
     <div class="c-popular-items__recipes-list">
-      <div v-for="(recipe, index) in recipes" :key="recipe_id">
+      <div v-for="(recipe, index) in recipes" :key="recipe.recipe_id">
         <RecipeCard  
           :title="recipe.recipe_name" 
           :description="recipe.recipe_description" 
