@@ -10,7 +10,7 @@ const props = defineProps({
 <div class="card">
     <div v-for="item in menucard">
         <MenuCardItem :image="item.menucard_image" :title="item.menucard_title" :text="item.menucard_text" :price="item.menucard_price"/>
-  </div>
+    </div>
 </div>
 
 </template>

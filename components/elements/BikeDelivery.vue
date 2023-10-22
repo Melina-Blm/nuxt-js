@@ -1,43 +1,40 @@
 <script setup>
-
-
 </script>
 
 <template>
-<div class="btn">
-    <p>Bike Delivery</p>
-    <div class="btn__image">
-        <img src="/bikedelivery.png" alt="">
+  <div class="b-block">
+    <p class="b-block__elem">Bike Delivery</p>
+    <div class="b-block__elem b-block__elem--image">
+      <img src="/bikedelivery.png" alt="">
     </div>
-</div>
-        
-    
+  </div>
 </template>
 
 <style lang="scss" scoped>
 
-.btn {
-    display: inline-flex;
-    gap:rem(60);
-    align-items: center;
-    background-color: $secondary-color;
-    padding: rem(4) rem(4) rem(4) rem(20);
-    border-radius: rem(60);
-    color:$primary-color;
+.b-block {
+  display: inline-flex;
+  gap: rem(60);
+  align-items: center;
+  background-color: $secondary-color;
+  padding: rem(4) rem(4) rem(4) rem(20);
+  border-radius: rem(60);
+  color: $primary-color;
 
-    &__image {
-        height: rem(43);
-        background-color: #F6F6F6;
-        border-radius: 100%;
-        padding: 10px 0;
-      img{
+  &__elem {
+    &--image {
+      height: rem(43);
+      background-color: #F6F6F6;
+      border-radius: 100%;
+      padding: 10px 0;
+
+      img {
         width: rem(60);
         height: rem(43);
         border-radius: 100%;
- 
       }
     }
+  }
 }
-
 
 </style>

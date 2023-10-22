@@ -55,6 +55,7 @@ const props = defineProps({
         display:flex;
         justify-content: space-between;
         align-items: center;
+        margin-top:rem(40);
     }
     &__tag {
         color:$primary-color;

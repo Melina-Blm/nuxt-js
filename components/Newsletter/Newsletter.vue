@@ -6,26 +6,25 @@ const props = defineProps({
 
 <template>
  
- 
- <div v-for="item in newsletter">
+<div v-for="item in newsletter">
   <div class="newsletter">
-  <div class="newsletter__leftcontent">
-    <img :src="item.newsletter_image.url" :alt="item.newsletter_image.alt" />
-  </div>
+    <div class="newsletter__leftcontent">
+      <img :src="item.newsletter_image.url" :alt="item.newsletter_image.alt" />
+    </div>
 
-  <div class="newsletter__rightcontent">
-    <PrismicRichText class="newsletter__rightcontent-title" :field="item.newsletter_title" />
-    <PrismicRichText :field="item.newsletter_text" />
-    <div class="newsletter__rightcontent-btn">
-      <div class="newsletter__input">  
-        <input type="text" placeholder="Type your email...">
-        <div class="newsletter__btn">
+    <div class="newsletter__rightcontent">
+      <PrismicRichText class="newsletter__rightcontent-title" :field="item.newsletter_title" />
+      <PrismicRichText :field="item.newsletter_text" />
+        <div class="newsletter__rightcontent-btn">
+          <div class="newsletter__input">  
+            <input type="text" placeholder="Type your email...">
+              <div class="newsletter__btn">
                 <button>Subscribe</button>
-            </div>
+              </div>
           </div>      
         </div>
-      </div>
     </div>
+  </div>
 </div>
 
 </template>

@@ -1,6 +1,8 @@
 <script setup>
-import hero from '@/components/hero/hero.vue';
+// Import the 'usePrismic' function to interact with Prismic CMS
 const { client } = usePrismic()
+
+// Fetch the homepage data asynchronously
 const { data: home, error } = await useAsyncData('home', () => client.getSingle('homepage'))
 const env = useRuntimeConfig()
 // Handle case when request fails
@@ -12,7 +14,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
   return $fetch(env.public.apiUrl + '/recipes')
 })
 
-
+// Set SEO metadata for the page based on the homepage data
 useSeoMeta({
     title: home.value.data.meta_title,
     description: home.value.data.meta_description,
@@ -26,51 +28,27 @@ console.log(home)
 </script>
 
 <template>
-        <!-- <pre>
-{{ home.data.testimonial_description }}
-</pre>
-     <pre>
-{{ home.data.testimonial }}
-</pre>
-<pre>
-{{ home.data.how_to }}
-</pre> --> 
-<!-- <pre>
-{{ home.data.services }}
-</pre> -->
-
     <div class="content">
-   
-
-    <div class="p-index">
-
-    
-  
-        <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_buttons"/>
-        <!-- <MenuCard :menucard="home.data.menucard"/> -->
-        <Information :information="home.data.information" />
-
-        <PopularItems v-bind="{tag: 'Product', title:'Most Popular Items'}"/>
-
-        
-   
-
-  <Services v-bind="{ tag: 'Services', title: 'Why Choose Our Favorite Food', services:home.data.services}" />
+        <Hero 
+        :title="home.data.hero_title" 
+        :text="home.data.hero_text" 
+        :buttons="home.data.hero_buttons"/>
      
-        <!-- <PrismicRichText v-bind="{field: home.data.hero_title}"/> -->
-        <!-- <RecipeCard v-bind="{ title: 'Titre de la recette', description: 'une description' }"/>
-        Page d'accueil -->
+        <Information 
+        :information="home.data.information" />
+
+        <PopularItems 
+        v-bind="{tag: 'Product', title:'Most Popular Items'}"/>
+
+        <Services 
+        v-bind="{ tag: 'Services', title: 'Why Choose Our Favorite Food', 
+        services:home.data.services}" />
         
         <HowTo v-bind="{ tag: 'How to work', title: 'Food us An Important Part Of A Balanced Diet', items:home.data.how_to}"/>
         <Testimonial v-bind="{tag: 'Testimonials', title: 'Our Happy Client Says', testimonial:home.data.testimonial, text:home.data.testimonial}"/>
         <Newsletter :newsletter="home.data.newsletter"/>
-      
-        
-     
     </div>
-    
-</div>
-<MyFooter/>
+  <MyFooter/>
 </template>
 
 <style lang="scss" scoped>
@@ -78,6 +56,4 @@ console.log(home)
 .content {
     margin: rem(0) rem(80)
 }
-
-
 </style>
