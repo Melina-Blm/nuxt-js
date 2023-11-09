@@ -27,10 +27,10 @@ const isOdd = (index) => {
 
         </div>
         <div class="c-how-to-line">
-            <img src="line.png" alt="">
+            <img src="/line.png" alt="">
         </div>
         <div class="c-how-to-line2">
-            <img src="line2.png" alt="">
+            <img src="/line2.png" alt="">
         </div>
     </section>
 </template>
