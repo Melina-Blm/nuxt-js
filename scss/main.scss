@@ -1,7 +1,5 @@
-@import "./foundations/reset";
-@import "./foundations/variables";
-@import "./foundations/functions";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap');
+@import '@/scss/foundations/reset';
+@import '@/scss/foundations/variables';
 
 body {
     font-family: $primary-font-family;
