@@ -2,7 +2,7 @@
 const props = defineProps({
     title: Array,
     text: Array,
-    icon: Array,
+    icon: String,
     service: Array,
    
     

@@ -23,7 +23,7 @@ useSeoMeta({
     twitterCard:'summary_large_image',
 })
 
-console.log(home)
+// console.log(home)
 
 </script>
 

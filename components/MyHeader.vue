@@ -2,7 +2,7 @@
 import { useGlobalStore } from '@/stores/global';
 
 const store = useGlobalStore();
-console.log(store)
+// console.log(store)
 </script>
 
 <template>
@@ -12,7 +12,7 @@ console.log(store)
       <ul>
         <router-link class="c-header__nav__item" to="/">Home</router-link>
         <router-link class="c-header__nav__item" to="/">Recettes</router-link>
-        <router-link class="c-header__nav__item" to="/404">Service</router-link>
+        <router-link class="c-header__nav__item" to="/">Service</router-link>
         <router-link class="c-header__nav__item" to="/">Shops</router-link>
       </ul>
     </nav>
