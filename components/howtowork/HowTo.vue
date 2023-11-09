@@ -73,8 +73,8 @@ const isOdd = (index) => {
                 display: block;
                 position: absolute;
                 width: 26vw;
-                top: 34.5%;
-                left: 10%;
+                top: 38.5%;
+                left: 10.5%;
               }
             }
 
@@ -83,8 +83,8 @@ const isOdd = (index) => {
                 display: block;
                 position: absolute;
                 width: 26vw;
-                top: 34.5%;
-                right: 10%;
+                top: 38.5%;
+                right: 10.5%;
               }
             }
         }
