@@ -44,7 +44,7 @@ const isVideoButton = computed(() => {
   justify-content: space-between;
   align-items: center;
   color: $white;
-  font-family: $primary-font-family;
+  font-family: $font;
   font-size: $regular-font-size;
   font-weight: 600;
   padding: rem(20) rem(50);
