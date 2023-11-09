@@ -3,39 +3,41 @@ const props = defineProps({
     tag: String,
     title: String,
     items: Array,
+    titles: Array
 })
+
+const isOdd = (index) => {
+    return index % 2 !== 0
+}
+
+
+
 </script>
 
 <template>
     <section class="c-how-to">
-      <img class="c-how-to__line1" src="/line1.png" alt="">
-      <!-- <img class="c-how-to__line2" src="/line2.png" alt=""> -->
       <span class="c-how-to__text">{{ tag }}</span>
       <h2 class="c-how-to__title">{{ title }}</h2>
-      <div class="c-how-to__list">
-        <div v-for="(item, index) in items" class="c-how-to__item">
-          <HowToItem v-if="index % 2 == 0" :title="item.how_to_title" :text="item.how_to_text" :image="item.how_to_image" :index="index"/>
-          <HowToItem v-else class="c-how-to__else" :title="item.how_to_title" :text="item.how_to_text" :image="item.how_to_image" :index="index"/>
+        <div class="c-how-to-content">
+            <div v-for="(item, index) in items" :key="index">
+                <HowToItem :reversed="isOdd(index)" :middle="index === 1" :end="index === 2" :endtext="index === 2"
+                    :title="item.how_to_title" :text="item.how_to_text" :image="item.how_to_image" />
+            </div>
+
+
         </div>
-      </div>
+        <div class="c-how-to-line">
+            <img src="line.png" alt="">
+        </div>
+        <div class="c-how-to-line2">
+            <img src="line2.png" alt="">
+        </div>
     </section>
-  </template>
-  
+</template>
 
 <style lang="scss" scoped>
-
-
 .c-how-to {
-  position: relative; // La section parente doit être en position relative
-  &__line1 {
-    position: absolute;
-    top: 35%;
-    width:28%;
-    left:9%;
-  }
-  // Le reste de votre CSS reste inchangé...
-}
-.c-how-to{
+    position: relative;
     &__text {
         display: flex;
     justify-content: center;
@@ -51,22 +53,41 @@ const props = defineProps({
     font-size:$big-font-size;
     margin-top:rem(10);
     }
-    &__list{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top:rem(40);
-    }
-    &__tag {
-        color:$primary-color;
-        
-    }
-    &__else {
+    &-content {
         display: flex;
-        flex-direction: column-reverse;
-        text-align:center;
-    
-    }
-}
+        justify-content: space-between;
+        margin: rem(70) rem(0);
 
+        &-line,
+        &-line2 {
+            display: none;
+        }
+    }
+
+}    
+
+@media screen and (min-width:1510px) and (max-width:1537px) {
+    .c-how-to {
+            &-line {
+              img{
+                display: block;
+                position: absolute;
+                width: 26vw;
+                top: 34.5%;
+                left: 10%;
+              }
+            }
+
+            &-line2 {
+              img{
+                display: block;
+                position: absolute;
+                width: 26vw;
+                top: 34.5%;
+                right: 10%;
+              }
+            }
+        }
+    
+}
 </style>
