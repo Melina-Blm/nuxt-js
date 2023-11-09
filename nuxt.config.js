@@ -1,14 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head : {
-      title : 'Nuxt 3 app',
-      link : [
-        {rel: 'preconnect', href : 'https://fonts.googleapis.com'},
-        {rel: 'stylesheet', href : 'https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap'}
-      ]
-    }
-  },
   devtools: { enabled: true },
 
   components: [
