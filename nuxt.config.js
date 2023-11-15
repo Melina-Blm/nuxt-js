@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/prismic', '@pinia/nuxt', '@nuxtjs/storybook'],
   prismic: { endpoint: process.env.NUXT_PRISMIC_ENDPOINT },
   css: [
-    '@/scss/main.scss'
+    '~/scss/main.scss'
   ],
   runtimeConfig: {
     public : {
