@@ -8,14 +8,6 @@ export default defineNuxtConfig({
     pathPrefix: false
   }
   ],
-  head: {
-    link: [
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap',
-      },
-    ],
-  },
   modules: ['@nuxtjs/prismic', '@pinia/nuxt', '@nuxtjs/storybook'],
   prismic: { endpoint: process.env.NUXT_PRISMIC_ENDPOINT },
   css: [

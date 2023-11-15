@@ -23,6 +23,7 @@ onMounted (() => {
 </template>
 
 <style lang="scss" scoped>
+@import "@/scss/main.scss";
 .content {
     margin: rem(0) rem(80)
 }
