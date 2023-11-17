@@ -25,9 +25,6 @@ onMounted (() => {
 <style lang="scss" scoped>
 @import "@/scss/main";
 
-p {
-  margin: 0;
-}
 .content {
     margin: rem(0) rem(80)
 }
