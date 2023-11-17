@@ -23,6 +23,7 @@ onMounted (() => {
 </template>
 
 <style lang="scss" >
+// import du main.scss dans l'app.vue car vercel ne le prend pas en compte
 @import "./scss/main.scss";
 
 
