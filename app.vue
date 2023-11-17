@@ -22,11 +22,12 @@ onMounted (() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
-@import "@/scss/main";
+<style lang="scss" >
+@import "./scss/main.scss";
+
 
 .content {
-    margin: rem(0) rem(80)
+    margin: rem(0) rem(80);
 }
 
 </style>
