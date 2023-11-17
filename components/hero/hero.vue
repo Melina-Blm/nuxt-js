@@ -41,6 +41,8 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
 </template>
 
 <style lang="scss">
+
+
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
